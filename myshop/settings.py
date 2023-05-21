@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "shop.apps.ShopConfig",
     "cart.apps.CartConfig",
+    "orders.apps.OrdersConfig",
+    "payment.apps.PaymentConfig",
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CART_SESSION_ID = 'cart'
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'coooll81@gmail.com'
+# EMAIL_HOST_PASSWORD = 'jivjtcidzxsducmp'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+# Настроечные параметры Stripe
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51NA8aDIxslPsYROLcnQr4OJLZkTVzXDOBVQN64bU6uhS1GXeIt4Bc0SjeJkW6rBsQOAH3Bc4HIbepuK5U4yynQUH004Zkn5bC0' # Публикуемый ключ
+STRIPE_SECRET_KEY = 'sk_test_51NA8aDIxslPsYROLjRqLincBydcKRTTN2ji7CcJMahs69tku9bZdPrtdYm34qW4yAA52cQ1uoNazfDhmjmZmmjBW00v0L7sthD' # Секретный ключ
+STRIPE_API_VERSION = '2022-08-01'
+
+STRIPE_WEBHOOK_SECRET = 'whsec_7de0d729d997627baa4e8a052045a5f0a5a3ae15c178aff4d36afd3befc568e4'
